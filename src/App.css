@@ -1,0 +1,62 @@
+.App{
+background-color: var(--VeryDarkBlue);
+}
+.theTopImgSide > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.theTopImgSide > div > h1{
+  color: var(  --VeryLightGray);
+  letter-spacing: 1em;
+}
+.theTopImgSide > .input-cont{
+  margin: auto;
+  text-align: center;
+}
+section{
+  padding: 3em;
+  background: url('./images/bg-desktop-dark.jpg');
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+main{
+  position: relative;
+}
+.dashboard{
+  position: relative;
+  bottom: 2em;
+}
+.text-input.completed {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+}
+
+.delete-button{
+  margin-right: 2em;
+  border: none;
+  background: none;
+}
+.delete-button > img{
+  border: none;
+}
+
+.total-count,.downbelow {
+display: flex;
+justify-content: space-around;
+flex-direction: row;
+gap: 3em;
+padding-top: 0.5em;
+}
+.total-text{
+  color: var(--DarkGrayishBlue);
+}
+.active{
+color: #3a66be;
+}
+
+.total-text {
+  font-weight: bold; 
+}

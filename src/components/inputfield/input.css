@@ -1,0 +1,88 @@
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px; 
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    width: 80vw;
+    max-width: 600px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+.custom-checkbox {
+    position: relative;
+}
+
+.checkbox-hidden {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-label {
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
+    background: #fff; 
+    border: 2px solid #333; 
+    margin-left: 1em;
+    cursor: pointer; 
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.checkbox-hidden:checked + .checkbox-label {
+    background: var(--VeryDarkDesaturatedBlue); 
+    border-color: var(--DarkGrayishBlue); 
+}
+
+.checkbox-label::after {
+    content: '';
+    display: block;
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%;
+    background: var(--VeryDarkDesaturatedBlue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+}
+
+.checkbox-hidden:checked + .checkbox-label::after {
+    opacity: 1; 
+}
+
+.text-input {
+    flex: 1;
+    border: none;
+    padding: 1em;
+    outline: none;
+    transition: background-color 0.3s ease;
+    color: var(--LightGrayishBlue);
+  }
+  
+.text-input::placeholder {
+    color: #888; 
+}
+.App.dark-mode .input-wrapper, .App.dark-mode .text-input {
+    background-color: var(--VeryDarkGrayishBlue);
+  }
+  
+  .App.light-mode .input-wrapper, .App.light-mode .text-input {
+    background-color: var(--VeryLightGray);
+    color: #333;
+  }
