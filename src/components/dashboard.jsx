@@ -49,13 +49,13 @@ const Dashboard = ({ items, updateItem, deleteItem }) => {
           </div>
         ))
       )}
-      <div className=" total-count">
+      <article className=" total-count">
         <div className="downbelow">
           <div className="total-text">All: {items.length}</div>
           <div className='active'>Active</div>
           <div className="total-text"> Completed: {completedCount}</div>
         </div>
-      </div>
+      </article>
     </div>
   );
 };
