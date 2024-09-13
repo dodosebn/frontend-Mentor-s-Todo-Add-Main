@@ -45,7 +45,7 @@ function App() {
       <section className="theTopImgSide" style={stylesForSection1}>
         <div>
           <h1>TODO</h1>
-          <img src={isDarkMode ? whiteMode : darkMode} alt="Toggle Theme" onClick={toggleTheme} />
+          <img src={isDarkMode ? darkMode : whiteMode} alt="Toggle Theme" onClick={toggleTheme} />
         </div>      
         <div className="input-cont">
           <Input onAddItem={handleAddItem} />
