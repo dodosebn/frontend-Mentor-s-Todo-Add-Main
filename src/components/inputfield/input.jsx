@@ -40,7 +40,7 @@ const Input = ({ onAddItem }) => {
           </div>
           <input 
             type="text" 
-            placeholder='currently typing'
+            placeholder='Add your next task'
             value={inpchange}  
             onChange={handleChange} 
             className="text-input"

@@ -2,7 +2,7 @@ import React from 'react';
 import deleteIcon from '../images/icon-cross.svg';
 const Dashboard = ({ items, updateItem, deleteItem }) => {
   if (!items || !Array.isArray(items)) {
-    return <p>No items to display</p>;
+    return <p>Get productive! Add a todo</p>;
   }
 
   const handleCheckboxChange = (index) => {
@@ -24,7 +24,7 @@ const Dashboard = ({ items, updateItem, deleteItem }) => {
   return (
     <div>
       {items.length === 0 ? (
-        <p>No items to display</p>
+        <p>Get productive! Add a todo</p>
       ) : (
         items.map((item, index) => (
           <div key={index} className="input-container dashboard-item">
