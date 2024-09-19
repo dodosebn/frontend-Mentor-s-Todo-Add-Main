@@ -12,9 +12,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const stylesForSection1 = {
-    backgroundImage: `linear-gradient(to right, transparent, rgba(107, 24, 120, 0.7), rgba(107, 24, 120, 0.7)), url(${
-      isDarkMode ? imgBlack : imgWhite
-    })`,
+    backgroundImage: `linear-gradient(to right, transparent, rgba(107, 24, 120, 0.7), rgba(107, 24, 120, 0.7)), url(${isDarkMode ? imgWhite : imgBlack})`,
     backgroundRepeat: "no-repeat",
     backgroundBlendMode: "color-dodge",
   };
@@ -24,10 +22,13 @@ function App() {
   };
 
   const handleUpdateItem = (index, updatedItem) => {
-    const updatedItems = items.map((item, i) =>
-      i === index ? updatedItem : item
-    );
+    const updatedItems = items.map((item, i) => (i === index ? updatedItem : item));
     setItems(updatedItems);
+  };
+
+  const handleDelCompletedItems = () => {
+    const newItems = items.filter(item => !item.isChecked);
+    setItems(newItems);
   };
 
   const handleDeleteItem = (index) => {
@@ -42,20 +43,16 @@ function App() {
     setIsDarkMode((prevMode) => !prevMode);
   };
 
+  const hasCompletedItems = items.some(item => item.isChecked);
+
   return (
-    <div
-      className={`App ${isDarkMode ? "dark-mode" : "light-mode"}`}
-      style={{
-        backgroundColor: isDarkMode
-          ? "var(--VeryDarkBlue)"
-          : "var(--VeryLightGrayishBlue)",
-      }}
-    >
+    <div className={`App ${isDarkMode ? "light-mode" : "dark-mode"}`} 
+         style={{ backgroundColor: isDarkMode ? "var(--VeryLightGrayishBlue)" : "var(--VeryDarkBlue)" }}>
       <section className="theTopImgSide" style={stylesForSection1}>
         <div>
           <h1>TODO</h1>
           <img
-            src={isDarkMode ? darkMode : whiteMode}
+            src={isDarkMode ? whiteMode : darkMode}
             alt="Toggle Theme"
             onClick={toggleTheme}
           />
@@ -73,6 +70,17 @@ function App() {
             deleteItem={handleDeleteItem}
             reorderItems={handleReorderItems}
           />
+          {hasCompletedItems && (
+            <aside>
+              <button 
+                onClick={handleDelCompletedItems} 
+                className="delete-completed-button"
+                aria-label="Delete completed items"
+              >
+                Clear Completed
+              </button>
+            </aside>
+          )}
         </div>
       </main>
     </div>
