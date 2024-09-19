@@ -9,16 +9,21 @@
 .input-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
     background-color: var(--VeryDarkDesaturatedBlue);
-    width: 80vw;
+    width: 70vw;
     max-width: 600px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-
+@media(max-width: 345px){
+    .input-wrapper {
+        width: 80vw;
+    }
+}
 .custom-checkbox {
     position: relative;
 }

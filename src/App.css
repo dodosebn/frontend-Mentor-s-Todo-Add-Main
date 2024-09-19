@@ -1,5 +1,6 @@
 .App{
 background-color: var(--VeryDarkBlue);
+background-size: cover;
 }
 .theTopImgSide > div {
   display: flex;
@@ -62,8 +63,8 @@ color: #3a66be;
   font-weight: bold; 
 }
 aside{
-  align-items: center;
-  margin-left: 9em;
+  display: flex;
+  justify-content: center;
   padding-top: 9px;
 }
 aside > button{
@@ -72,14 +73,4 @@ background-color: rgba(107, 24, 120, 0.7);
 color: black;
 padding: 0.5rem;
 border-radius: 7px;
-}
-@media (min-width: 768px) {
-  .theTopImgSide > div {
-    margin-left: 20em;
-    margin-right: 2em;
-    justify-content: space-between;
-  }
-  aside{
-    margin-left: 30.5em;
-  }
 }
